@@ -170,7 +170,7 @@ public class FPlayer extends PlayerEntity implements RelationParticipator {
     }
 
     public ChatMode getChatMode() {
-        if (this.factionId.equals("0") || !Conf.factionOnlyChat) {
+        if (!Conf.factionOnlyChat || this.factionId.equals("0")) {
             this.chatMode = ChatMode.PUBLIC;
         }
         return chatMode;
